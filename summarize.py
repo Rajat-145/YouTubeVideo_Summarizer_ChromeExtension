@@ -22,7 +22,7 @@ def summarize():
     except Exception as e:
         return jsonify({'error': f'Failed to retrieve transcript: {str(e)}'}), 500
     
-    palm.configure(api_key='AIzaSyC83Yrs5-IcKklvTCd3FEonXeOxRPUjM34')
+    palm.configure(api_key='YOUR OWN PALM API KEY')
     models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
     if not models:
         return jsonify({'error': 'No models available'}), 500
